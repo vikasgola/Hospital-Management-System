@@ -1,0 +1,26 @@
+{
+  "name": "hospitalms",
+  "version": "1.0.0",
+  "description": "hospital mangement system",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vikasgola/Hospital-Management-System.git"
+  },
+  "author": "Vikas Gola",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/vikasgola/Hospital-Management-System/issues"
+  },
+  "homepage": "https://github.com/vikasgola/Hospital-Management-System#readme",
+  "devDependencies": {
+    "electron": "^4.0.6",
+    "electron-reload": "^1.4.0"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}

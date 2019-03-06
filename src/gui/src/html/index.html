@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Hospital Mangement System</title>
+
+    <!--Bootsrap 4 CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/tabs.css">
+</head>
+
+<body>
+
+    <div id="login" class="container" style="display: none">
+        <div class="card mx-auto">
+            <article class="card-body">
+                <h4 class="card-title text-center mb-4 mt-1">Sign in</h4>
+                <hr>
+                <form>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                            </div>
+                            <input name="" class="form-control" placeholder="Email or login" type="email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                            </div>
+                            <input class="form-control" placeholder="******" type="password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block"> Login </button>
+                    </div>
+                    <p class="text-center"><a href="#" class="btn">Forgot password?</a></p>
+                </form>
+            </article>
+        </div>
+    </div>
+
+    <div id="side-menu" class="h-100">
+        <nav class="navbar navbar-inverse">
+            <a class="navbar-brand" href="#">Menu</a>
+            <ul class="navbar-nav">
+                <li>
+                    <a href="#">Patients</a>
+                    <ul class="navbar-nav">
+                        <li class="nav-active">
+                            <a href="#">Patient Registration</a>
+                        </li>
+                        <li>
+                            <a href="#">Patient Information</a>
+                        </li>
+                        <li>
+                            <a href="#">Patient History</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Doctors</a>
+                    <ul class="navbar-nav">
+                        <li>
+                            <a href="#">Doctor Information</a>
+                        </li>
+                        <li>
+                            <a href="#">Appointments</a>
+                        </li>
+                        <li>
+                            <a href="#">Emergency Alert</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Staff</a>
+                    <ul class="navbar-nav">
+                        <li>
+                            <a href="#">Consultant</a>
+                        </li>
+                        <li>
+                            <a href="#">Interns</a>
+                        </li>
+                        <li>
+                            <a href="#">Nurses</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Wards</a>
+                    <ul class="navbar-nav">
+                        <li>
+                            <a href="#">Ward Information</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Beds</a>
+                    <ul class="navbar-nav">
+                        <li>
+                            <a href="#">Bed Status</a>
+                        </li>
+                        <li>
+                            <a href="#">Vacant Beds</a>
+                        </li>
+                        <li>
+                            <a href="#">Wards</a>
+                        </li>
+                        <li>
+                            <a href="#">Reports</a>
+                        </li>
+                        <li>
+                            <a href="#">History</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Lab and Stock</a>
+                    <ul class="navbar-nav">
+                        <li>
+                            <a href="#">Lab Information</a>
+                        </li>
+                        <li>
+                            <a href="#">Stock Information</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Ambulance</a>
+                    <ul class="navbar-nav">
+                        <li>
+                            <a href="#">Ambulance Information</a>
+                        </li>
+                        <li>
+                            <a href="#">Ambulance Status</a>
+                        </li>
+                        <li>
+                            <a href="#">Ambulance History</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Operation Theater</a>
+                    <ul class="navbar-nav">
+                        <li>
+                            <a href="#">Current Status</a>
+                        </li>
+                        <li>
+                            <a href="#">History</a>
+                        </li>
+                    </ul>
+                </li>
+                <li></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <div id="main-content">
+        <!-- TODO: Change here div element content according to tab-->
+        <!-- <h1>Hello World</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium possimus harum fugit, pariatur nulla
+            explicabo error autem atque itaque vel sequi esse ad id dicta asperiores incidunt. Repudiandae dolores
+            veniam magnam quos ea iste! Aperiam illum harum odio asperiores quae!</p> -->
+    </div>
+
+
+    <script>
+        window.$ = window.jQuery = require('jquery');
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script>
+        require("../js/index.js")
+    </script>
+</body>
+
+</html>

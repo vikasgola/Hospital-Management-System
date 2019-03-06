@@ -1,0 +1,30 @@
+.form-container{
+    margin: 20px;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+}
+.form{
+    /* width: 400px; */
+}
+
+.form-container label{
+    /* width: 100px; */
+    float: left;
+}
+
+.radio-inline{
+    padding: 2px;
+    padding-left: 20px;
+}
+
+.info-container{
+    margin-top: 10px;
+    width: 100%;
+    float: left;
+}
+
+#patient-table{
+    margin-top: 20px;
+}
+
