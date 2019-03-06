@@ -8,7 +8,7 @@ def createTables(cursor):
         patient_id INT NOT NULL AUTO_INCREMENT,
         name VARCHAR(100) NOT NULL,
         address TEXT NOT NULL,
-        mobileNumber INT NOT NULL,
+        mobileNumber VARCHAR() NOT NULL,
         email VARCHAR(100) NOT NULL,
         dob DATE NOT NULL,
         gender VARCHAR(1) NOT NULL,

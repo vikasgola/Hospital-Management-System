@@ -5,7 +5,7 @@ CREATE TABLE Patients(
     patient_id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     address TEXT NOT NULL,
-    mobileNumber INT NOT NULL,
+    mobileNumber VARCHAR(20) NOT NULL,
     email VARCHAR(100) NOT NULL,
     dob DATE NOT NULL,
     gender VARCHAR(1) NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE Doctors(
     doctor_id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     address TEXT NOT NULL,
-    mobileNumber INT NOT NULL,
+    mobileNumber VARCHAR(20) NOT NULL,
     email VARCHAR(100) NOT NULL,
     dob DATE NOT NULL,
     department_id INT NOT NULL,
@@ -76,7 +76,7 @@ CREATE TABLE Appointments(
 
 CREATE TABLE Departments(
     department_id INT NOT NULL AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
+    name VARCHAR(200) NOT NULL,
     salary INT NOT NULL,
     PRIMARY KEY ( department_id )
 );
@@ -89,7 +89,7 @@ CREATE TABLE LabInfos(
 
 CREATE TABLE Ambulances(
     ambulance_id INT NOT NULL AUTO_INCREMENT,
-    platenumber VARCHAR(12) NOT NULL,
+    platenumber VARCHAR(100) NOT NULL,
     type VARCHAR(100) NOT NULL,
     status ENUM("available", "not available") NOT NULL,
     PRIMARY KEY ( ambulance_id )
