@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "Setting Up PC for HospitalMS"
+echo ""
+
+sudo apt-get install mysql-client mysql-server python3
+
+echo "Creating a Database for Hospital Management System (HospitalMS)"
+python3 Hospital_Management_System/helper/init.py
+
+echo "Finished!"
