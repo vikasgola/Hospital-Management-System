@@ -57,14 +57,14 @@
                 <li>
                     <a href="#">Patients</a>
                     <ul class="navbar-nav">
-                        <li class="nav-active">
-                            <a href="#">Patient Registration</a>
+                        <li>
+                            <a href="#" id="patient-registration-link">Patient Registration</a>
                         </li>
                         <li>
-                            <a href="#">Patient Information</a>
+                            <a href="#" id="patient-information-link">Patient Information</a>
                         </li>
                         <li>
-                            <a href="#">Patient History</a>
+                            <a href="#" id="patient-history-link">Patient History</a>
                         </li>
                     </ul>
                 </li>
@@ -72,13 +72,13 @@
                     <a href="#">Doctors</a>
                     <ul class="navbar-nav">
                         <li>
-                            <a href="#">Doctor Information</a>
+                            <a href="#" id="doctor-information-link">Doctor Information</a>
                         </li>
                         <li>
-                            <a href="#">Appointments</a>
+                            <a href="#" id="doctor-appoinments-link">Appointments</a>
                         </li>
                         <li>
-                            <a href="#">Emergency Alert</a>
+                            <a href="#" id="doctor-emergencyalerts-link">Emergency Alert</a>
                         </li>
                     </ul>
                 </li>
@@ -97,41 +97,19 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Wards</a>
-                    <ul class="navbar-nav">
-                        <li>
-                            <a href="#">Ward Information</a>
-                        </li>
-                    </ul>
+                    <a id="ward-information-link" href="#">Wards</a>
                 </li>
                 <li>
                     <a href="#">Beds</a>
                     <ul class="navbar-nav">
                         <li>
-                            <a href="#">Bed Status</a>
+                            <a href="#">Bed Information</a>
                         </li>
                         <li>
                             <a href="#">Vacant Beds</a>
                         </li>
                         <li>
-                            <a href="#">Wards</a>
-                        </li>
-                        <li>
                             <a href="#">Reports</a>
-                        </li>
-                        <li>
-                            <a href="#">History</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Lab and Stock</a>
-                    <ul class="navbar-nav">
-                        <li>
-                            <a href="#">Lab Information</a>
-                        </li>
-                        <li>
-                            <a href="#">Stock Information</a>
                         </li>
                     </ul>
                 </li>
@@ -142,23 +120,12 @@
                             <a href="#">Ambulance Information</a>
                         </li>
                         <li>
-                            <a href="#">Ambulance Status</a>
-                        </li>
-                        <li>
-                            <a href="#">Ambulance History</a>
+                            <a href="#">Available Ambulance</a>
                         </li>
                     </ul>
                 </li>
                 <li>
                     <a href="#">Operation Theater</a>
-                    <ul class="navbar-nav">
-                        <li>
-                            <a href="#">Current Status</a>
-                        </li>
-                        <li>
-                            <a href="#">History</a>
-                        </li>
-                    </ul>
                 </li>
                 <li></li>
             </ul>
@@ -166,24 +133,27 @@
     </div>
 
 
-    <div id="main-content">
-        <!-- TODO: Change here div element content according to tab-->
-        <!-- <h1>Hello World</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium possimus harum fugit, pariatur nulla
-            explicabo error autem atque itaque vel sequi esse ad id dicta asperiores incidunt. Repudiandae dolores
-            veniam magnam quos ea iste! Aperiam illum harum odio asperiores quae!</p> -->
-    </div>
+    <div id="main-content"></div>
 
 
     <script>
         window.$ = window.jQuery = require('jquery');
+        mysql = require('mysql');
+        let db_config = {
+            host: 'localhost',
+            user: 'hms',
+            password: 'openhms',
+            database: 'HospitalMS'
+        };
+
+        pool = mysql.createPool(db_config);
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <script>
-        require("../js/index.js")
+        require("./index.js");
     </script>
 </body>
 

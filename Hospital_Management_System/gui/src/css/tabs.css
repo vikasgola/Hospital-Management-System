@@ -24,7 +24,7 @@
     float: left;
 }
 
-#patient-table{
+table{
     margin-top: 20px;
+    overflow: auto;
 }
-

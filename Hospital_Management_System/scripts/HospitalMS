@@ -1,5 +1,5 @@
 #!/bin/bash
 
 echo "Starting Hospital Management System"
-# TODO: 
+npm start --prefix Hospital_Management_System/gui/
 echo "closed"

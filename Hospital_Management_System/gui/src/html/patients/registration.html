@@ -1,7 +1,7 @@
-<header> Patient Registration</header>
+<header>Patient Registration</header>
 
 <div class="form-container">
-    <form class="form">
+    <form class="form" id="patient-registration" >
         <div class="form-group">
             <label for="fullname">Full Name:</label>
             <input type="text" class="form-control" id="fullname" placeholder="e.g. Vikas Gola">
@@ -19,18 +19,24 @@
             <input type="tel" class="form-control" id="phnumber" placeholder="+911234567890">
         </div>
         <div class="form-group">
-            <label for="state"> State:</label>
-            <input type="" class="form-control" id="state" placeholder="Haryana">
+            <label for="date"> Date Of Birth:</label>
+            <input type="date" class="form-control" id="date">
         </div>
         <div class="form-group">
             <label>Gender: </label>
             <div>
-                <label class="radio-inline"><input type="radio" name="male" checked>Male</label>
-                <label class="radio-inline"><input type="radio" name="female">Female</label>
+                <label class="radio-inline"><input type="radio" name="gender" value="M" checked>Male</label>
+                <label class="radio-inline"><input type="radio" name="gender" value="F">Female</label>
             </div>
         </div>
         <div class="form-group">
             <input type="submit" class="form-control btn-primary">
         </div>
+        <h6 class="text-center" id="patient-registration-result"></h6>
     </form>
 </div>
+
+<script>
+    delete require.cache[require.resolve('./patients/patients.js')];
+    require("./patients/patients.js")
+</script>
