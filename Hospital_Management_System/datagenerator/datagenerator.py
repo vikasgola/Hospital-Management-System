@@ -113,7 +113,7 @@ def createData(num):
             "status": random.choice(["available", "not available"])
         })
 
-    for i in range(random.randint(num//32, num//16)):
+    for i in range(random.randint(num, num*4)):
         tempdate = Datetime().datetime(start=2014, end=2018)
         operationtheaters.append({
             "fromdate": tempdate,

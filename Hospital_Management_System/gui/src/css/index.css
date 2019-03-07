@@ -8,6 +8,7 @@
 body{
     background: #222222;
     height: 100vh;
+    overflow-y: hidden;
 }
 
 #login{
@@ -73,6 +74,7 @@ body{
 }
 
 #main-content{
+    height: 100vh;
     overflow-x: scroll;
     padding-top: 20px;
 }
@@ -88,13 +90,13 @@ body{
 }
 
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px #444444; 
+    -webkit-box-shadow: inset 0 0 6px #888888; 
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px #444444; 
+    -webkit-box-shadow: inset 0 0 6px #888888; 
 }
 
 

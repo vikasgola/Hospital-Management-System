@@ -39,11 +39,13 @@ function registerPatient(connection) {
 
 function collectPatientInfomation(connection) {
     var inputdata = $('#patient-information-search-input').val();
-    if (inputdata == "") return;
+    query = 'SELECT * FROM Patients WHERE patient_id = ?';
+    if (inputdata == "") {
+        query = 'SELECT * FROM Patients';        
+    }
 
     $("#patient-information-result").text("");
 
-    query = 'SELECT * FROM Patients WHERE patient_id = ?';
     connection.query(query, inputdata, function (err, rows, fields) {
         if (err) {
             console.log("An error ocurred performing the query.");
@@ -51,9 +53,12 @@ function collectPatientInfomation(connection) {
         } else {
             $('#patient-information-table tr').not(':first').remove();
             var html = '';
-            for (let key in rows[0]) {
-                html += '<tr><td>' + key +
-                    '</td><td>' + rows[0][key] + '</td></tr>';
+            for (let a = 0; a < rows.length; a++) {
+                html += "<tr>"
+                for (let key in rows[a]) {
+                    html += '<td>' + rows[a][key] + '</td>';
+                }
+                html += "</tr>"
             }
             $('#patient-information-table tr').first().after(html);
             if ($('#patient-information-table tr').length <= 1) {
@@ -61,17 +66,19 @@ function collectPatientInfomation(connection) {
                 $("#patient-information-result").addClass("text-warning")
             }
         }
-        $('#patient-information-search-input').val("");
+        // $('#patient-information-search-input').val("");
     });
 }
 
 function collectPatientHistory(connection) {
     var inputdata = $('#patient-history-search').val();
-    if (inputdata == "") return;
+    query = 'SELECT * FROM PatientHistory WHERE patient_id = ?';
+    if (inputdata == "") {
+        query = 'SELECT * FROM PatientHistory';        
+    }
 
     $("#patient-history-result").text("");
 
-    query = 'SELECT * FROM PatientHistory WHERE patient_id = ?';
     connection.query(query, inputdata, function (err, rows, fields) {
         if (err) {
             console.log("An error ocurred performing the query.");
@@ -92,7 +99,7 @@ function collectPatientHistory(connection) {
                 $("#patient-history-result").addClass("text-warning")
             }
         }
-        $('#patient-history-search').val("");
+        // $('#patient-history-search').val("");
     });
 }
 
@@ -104,7 +111,10 @@ $("#patient-registration").submit(() => {
 $("#patient-information-submit").click(() => {
     connectHospitalMS(collectPatientInfomation);
 });
+connectHospitalMS(collectPatientInfomation);
+
 
 $("#patient-history-submit").click(() => {
     connectHospitalMS(collectPatientHistory);
 });
+connectHospitalMS(collectPatientHistory);

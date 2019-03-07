@@ -19,41 +19,45 @@ function patientHistory() {
     $("#main-content").load("../html/patients/history.html");
 }
 
-
-function getPatient() {
-    console.log($("#patient-information-search-input").val())
-    $("#patient-information-search-input").val("");
-}
-
-function getDoctor() {
-    console.log($("#doctor-information-search-input").val())
-    $("#doctor-information-search-input").val("");
-}
-
-
-function searchPatientHistory() {
-    console.log("asddsad");
-    var value = $("#patient-history-search").val().toLowerCase();
-    $("#patient-history-table tr").filter(function () {
-        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-}
-
-
 function doctorInformation() {
-    $(document).ready(function () {
-        $("#main-content").load("../html/doctors/information.html");
-    });
+    $("#main-content").load("../html/doctors/information.html");
 }
 
-function wardInformation(){
-    $(document).ready(function () {
-        $("#main-content").load("../html/wards/information.html");
-    });
+function wardInformation() {
+    $("#main-content").load("../html/wards/information.html");
+}
+
+function operationTheater() {
+    $("#main-content").load("../html/operation_theater/information.html");
+}
+
+function staffConsultant(){
+    $("#main-content").load("../html/staffs/consultant.html");
+}
+function staffInterns(){
+    $("#main-content").load("../html/staffs/interns.html");
+}
+
+function staffNurses(){
+    $("#main-content").load("../html/staffs/nurses.html");
+}
+
+function doctorAppointment(){
+    $("#main-content").load("../html/doctors/appointments.html");
+}
+
+function doctorAlert(){
+    $("#main-content").load("../html/doctors/alerts.html");
 }
 
 $("#patient-registration-link").click(patientRegistration)
 $("#patient-information-link").click(patientInformation)
 $("#patient-history-link").click(patientHistory)
 $("#doctor-information-link").click(doctorInformation)
+$("#doctor-appointment-link").click(doctorAppointment)
+$("#doctor-emergencyalert-link").click(doctorAlert)
 $("#ward-information-link").click(wardInformation)
+$("#operation-theater-link").click(operationTheater)
+$("#staff-consultant-link").click(staffConsultant)
+$("#staff-intern-link").click(staffInterns)
+$("#staff-nurse-link").click(staffNurses)
