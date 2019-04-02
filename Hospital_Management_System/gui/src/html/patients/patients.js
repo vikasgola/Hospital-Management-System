@@ -99,7 +99,6 @@ function collectPatientHistory(connection) {
                 $("#patient-history-result").addClass("text-warning")
             }
         }
-        // $('#patient-history-search').val("");
     });
 }
 

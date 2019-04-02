@@ -3,61 +3,23 @@ const {
     connectHospitalMS
 } = require("../js/global");
 
-function patientRegistration() {
+function loadContent(event){
     $("#main-content").html('');
-    $("#main-content").load("../html/patients/registration.html");
+    $("#main-content").load(event.data);
 }
 
-
-function patientInformation() {
-    $("#main-content").html('');
-    $("#main-content").load("../html/patients/information.html");
-}
-
-function patientHistory() {
-    $("#main-content").html('');
-    $("#main-content").load("../html/patients/history.html");
-}
-
-function doctorInformation() {
-    $("#main-content").load("../html/doctors/information.html");
-}
-
-function wardInformation() {
-    $("#main-content").load("../html/wards/information.html");
-}
-
-function operationTheater() {
-    $("#main-content").load("../html/operation_theater/information.html");
-}
-
-function staffConsultant(){
-    $("#main-content").load("../html/staffs/consultant.html");
-}
-function staffInterns(){
-    $("#main-content").load("../html/staffs/interns.html");
-}
-
-function staffNurses(){
-    $("#main-content").load("../html/staffs/nurses.html");
-}
-
-function doctorAppointment(){
-    $("#main-content").load("../html/doctors/appointments.html");
-}
-
-function doctorAlert(){
-    $("#main-content").load("../html/doctors/alerts.html");
-}
-
-$("#patient-registration-link").click(patientRegistration)
-$("#patient-information-link").click(patientInformation)
-$("#patient-history-link").click(patientHistory)
-$("#doctor-information-link").click(doctorInformation)
-$("#doctor-appointment-link").click(doctorAppointment)
-$("#doctor-emergencyalert-link").click(doctorAlert)
-$("#ward-information-link").click(wardInformation)
-$("#operation-theater-link").click(operationTheater)
-$("#staff-consultant-link").click(staffConsultant)
-$("#staff-intern-link").click(staffInterns)
-$("#staff-nurse-link").click(staffNurses)
+$("#patient-registration-link").click("../html/patients/registration.html", loadContent)
+$("#patient-information-link").click("../html/patients/information.html", loadContent)
+$("#patient-history-link").click("../html/patients/history.html", loadContent)
+$("#doctor-information-link").click("../html/doctors/information.html", loadContent)
+$("#doctor-appointment-link").click("../html/doctors/appointments.html", loadContent)
+$("#doctor-emergencyalert-link").click("../html/doctors/alerts.html", loadContent)
+$("#ward-information-link").click("../html/wards/information.html", loadContent)
+$("#operation-theater-link").click("../html/operation_theater/information.html", loadContent)
+$("#staff-consultant-link").click("../html/staffs/consultant.html", loadContent)
+$("#staff-intern-link").click("../html/staffs/interns.html", loadContent)
+$("#staff-nurse-link").click("../html/staffs/nurses.html", loadContent)
+$("#ambulance-information-link").click("../html/ambulance/information.html", loadContent)
+$("#ambulance-available-link").click("../html/ambulance/available.html", loadContent)
+$("#bed-information-link").click("../html/beds/information.html", loadContent)
+// $("#bed-vacant-link").click("../html/beds/vacantbeds.html", loadContent)

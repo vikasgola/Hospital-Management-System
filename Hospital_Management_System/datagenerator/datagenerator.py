@@ -82,16 +82,16 @@ def createData(num):
     for i in range(len(doctors)):
         if( departments[doctors[i]["department_id"]-1]["name"] in temp):
             doctorlogin.append({
-                "doctor_id": i,
+                "doctor_id": i+1,
                 "username": Person().username(),
                 "password": Person().password()
             })
     
-    for i in range(random.randint(num, num*3)):
+    for i in range(random.randint(num//4, num//3)):
         tempdoctor = random.randint(0,len(doctors)-1)
         temp2 = departments[doctors[tempdoctor]["department_id"] - 1]["name"]
         while( temp2 not in temp):
-            tempdoctor = random.randint(0,len(doctors)-1)
+            tempdoctor = random.randint(0, len(doctors)-1)
             temp2 = departments[doctors[tempdoctor]["department_id"] - 1]["name"]
             
         appointments.append({
@@ -101,7 +101,7 @@ def createData(num):
             "timestamp": Datetime().datetime(start=2014, end=2018)
         })
 
-    for i in range(random.randint(num, num*5)):
+    for i in range(random.randint(num, num*3)):
         labinfos.append({
             "testresult": Text().sentence()
         })
@@ -113,7 +113,7 @@ def createData(num):
             "status": random.choice(["available", "not available"])
         })
 
-    for i in range(random.randint(num, num*4)):
+    for i in range(random.randint(num, num*2)):
         tempdate = Datetime().datetime(start=2014, end=2018)
         operationtheaters.append({
             "fromdate": tempdate,
@@ -122,7 +122,7 @@ def createData(num):
             "doctor_id": Numbers().between(minimum=1, maximum=len(doctors))
         })
 
-    for i in range(random.randint(num, num*7)):
+    for i in range(random.randint(num, num*4)):
         tempdate = Datetime().date(start=2014, end=2018)
         patienthistory.append({
             "fromdate": tempdate,

@@ -1,8 +1,9 @@
 module.exports.connectHospitalMS = function (callFunction) {
     pool.getConnection((err, connection) => {
-        callFunction(connection)
         if(err){
             console.log("Connection Error: ", err)
+        }else{
+            callFunction(connection);
         }
         connection.release();
     });
