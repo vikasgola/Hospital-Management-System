@@ -47,6 +47,7 @@ def createTables(cursor):
     cursor.execute("""CREATE TABLE Beds(
         bed_id INT NOT NULL AUTO_INCREMENT,
         ward_number INT NOT NULL,
+        patient_id INT NULL,
         bed_number INT NOT NULL,
         PRIMARY KEY ( bed_id )
     );""")
@@ -54,6 +55,7 @@ def createTables(cursor):
     cursor.execute("""CREATE TABLE EmergencyAlerts(
         alert_id INT NOT NULL AUTO_INCREMENT,
         timestamp DATETIME NOT NULL,
+        doctor_id INT NOT NULL,
         message TEXT NOT NULL,
         PRIMARY KEY ( alert_id )
     );""")
@@ -82,6 +84,7 @@ def createTables(cursor):
     
     cursor.execute("""CREATE TABLE LabInfos(
         report_id INT NOT NULL AUTO_INCREMENT,
+        patient_id INT NOT NULL,
         testresult TEXT NOT NULL,
         PRIMARY KEY ( report_id )
     );""")
@@ -108,8 +111,17 @@ def createForiegnKeys(cursor):
     cursor.execute("""ALTER TABLE Doctors
         ADD FOREIGN KEY (department_id) REFERENCES Departments(department_id);""")
 
+
+    cursor.execute("""ALTER TABLE EmergencyAlerts
+        ADD FOREIGN KEY (doctor_id) REFERENCES Doctors(doctor_id);""")
+
+    cursor.execute("""ALTER TABLE LabInfos
+        ADD FOREIGN KEY (patient_id) REFERENCES Patients(patient_id);""")
+
+
     cursor.execute("""ALTER TABLE Beds
-        ADD FOREIGN KEY (ward_number) REFERENCES Wards(ward_number);""")
+        ADD FOREIGN KEY (ward_number) REFERENCES Wards(ward_number),
+        ADD FOREIGN KEY (patient_id) REFERENCES Patients(patient_id);""")
 
     cursor.execute("""ALTER TABLE DoctorLogin
         ADD FOREIGN KEY (doctor_id) REFERENCES Doctors(doctor_id);""")

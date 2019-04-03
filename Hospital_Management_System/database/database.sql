@@ -48,6 +48,7 @@ CREATE TABLE Beds(
     bed_id INT NOT NULL AUTO_INCREMENT,
     ward_number INT NOT NULL,
     bed_number INT NOT NULL,
+    patient_id INT NULL,
     PRIMARY KEY ( bed_id )
 );
 
@@ -56,6 +57,7 @@ CREATE TABLE EmergencyAlerts(
     alert_id INT NOT NULL AUTO_INCREMENT,
     timestamp DATETIME NOT NULL,
     message TEXT NOT NULL,
+    doctor_id INT NOT NULL,
     PRIMARY KEY ( alert_id )
 );
 
@@ -84,6 +86,7 @@ CREATE TABLE Departments(
 CREATE TABLE LabInfos(
     report_id INT NOT NULL AUTO_INCREMENT,
     testresult TEXT NOT NULL,
+    patient_id INT NOT NULL,
     PRIMARY KEY ( report_id )
 );
 

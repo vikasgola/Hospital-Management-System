@@ -7,11 +7,11 @@
     <title>Hospital Mangement System</title>
 
     <!--Bootsrap 4 CDN-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!--Fontawesome CDN-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/tabs.css">
@@ -19,18 +19,21 @@
 
 <body>
 
-    <div id="login" class="container" style="display: none">
+    <h2 id="welcome-msg" class="text-center text-primary shadow-lg p-3 bg-dark rounded" style="margin-top:2%;">Welcome
+        to
+        Hospital Managment System</h2>
+    <div id="login" class="container">
         <div class="card mx-auto">
             <article class="card-body">
                 <h4 class="card-title text-center mb-4 mt-1">Sign in</h4>
                 <hr>
-                <form>
+                <form id="login-form">
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                             </div>
-                            <input name="" class="form-control" placeholder="Email or login" type="email">
+                            <input id="username" class="form-control" placeholder="username">
                         </div>
                     </div>
                     <div class="form-group">
@@ -38,19 +41,19 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                             </div>
-                            <input class="form-control" placeholder="******" type="password">
+                            <input id="password" class="form-control" placeholder="******" type="password">
                         </div>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block"> Login </button>
+                        <button id="loginbtn" type="button" class="btn btn-primary btn-block">Login</button>
                     </div>
-                    <p class="text-center"><a href="#" class="btn">Forgot password?</a></p>
+                    <p class="text-center"><a class="btn">Forgot password?</a></p>
                 </form>
             </article>
         </div>
     </div>
 
-    <div id="side-menu" class="h-100">
+    <div id="receptionist-side-menu" class="h-100 sidebar-style">
         <nav class="navbar navbar-inverse">
             <a class="navbar-brand" href="#">Menu</a>
             <ul class="navbar-nav">
@@ -122,16 +125,50 @@
                     </ul>
                 </li>
                 <li>
-                    <a id="operation-theater-link" href="#" >Operation Theater</a>
+                    <a id="operation-theater-link" href="#">Operation Theater</a>
                 </li>
                 <li></li>
             </ul>
         </nav>
     </div>
 
+    <div id="doctor-side-menu" class="h-100 sidebar-style">
+        <nav class="navbar navbar-inverse">
+            <a class="navbar-brand" href="#">Menu</a>
+            <ul class="navbar-nav">
+                <!-- <li>
+                    <a href="#" id="doctor-profile-link">Profile</a>
+                </li> -->
+                <li>
+                    <a href="#">Patients</a>
+                    <ul class="navbar-nav">
+                        <li>
+                            <a href="#" id="patient-history-link2">History</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Appointments and Alerts</a>
+                    <ul class="navbar-nav">
+                        <li>
+                            <a href="#" id="doctor-appointment-link2">Requested Appointments</a>
+                        </li>
+                        <li>
+                            <a href="#" id="doctor-appointment-link3">Appointments</a>
+                        </li>
+                        <li>
+                            <a href="#" id="doctor-emergencyalert-link2">Emergency Alert</a>
+                        </li>
+                    </ul>
+                </li>
+                <li></li>
+            </ul>
+        </nav>
+    </div>
 
     <div id="main-content">
-        <h2 class="text-center text-primary shadow-lg p-3 bg-dark rounded" style="margin-right: 10px;">Welcome to Hospital Managment System</h2>
+        <h2 class="text-center text-primary shadow-lg p-3 bg-dark rounded" style="margin-right: 10px;">Welcome to
+            Hospital Managment System</h2>
     </div>
 
 
@@ -147,10 +184,12 @@
 
         pool = mysql.createPool(db_config);
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
     <script>
         require("./index.js");
     </script>

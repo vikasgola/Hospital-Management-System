@@ -1,35 +1,37 @@
-.form-container{
+.form-container {
     margin: 20px;
     display: -webkit-flex;
     display: flex;
     justify-content: center;
 }
-.form{
+
+.form {
     /* width: 400px; */
 }
 
-.form-container label{
+.form-container label {
     /* width: 100px; */
     float: left;
 }
 
-.radio-inline{
+.radio-inline {
     padding: 2px;
     padding-left: 20px;
 }
 
-.info-container{
+.info-container {
     margin-top: 10px;
     width: 100%;
     float: left;
-    overflow-y: scroll;
+    /* overflow: hidden; */
 }
 
-table{
+table {
     margin-top: 20px;
-    overflow-y: scroll;
+    /* display: block; */
+    /* white-space: nowrap; */
 }
 
-tbody{
-    overflow-y: scroll;    /* Trigger vertical scroll    */
+tbody {
+    overflow: hidden;
 }

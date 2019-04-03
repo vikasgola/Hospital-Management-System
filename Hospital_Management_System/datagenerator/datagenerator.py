@@ -68,15 +68,23 @@ def createData(num):
         })
     
     for i in range(random.randint(num//4, num//2)):
-        beds.append({
-            "ward_number": Numbers().between(minimum=1, maximum=len(wards)),
-            "bed_number": Numbers().between(minimum=1, maximum=100)
-        })
+        if(random.random() < 0.5):
+            beds.append({
+                "ward_number": Numbers().between(minimum=1, maximum=len(wards)),
+                "bed_number": Numbers().between(minimum=1, maximum=100),
+                "patient_id": Numbers().between(minimum=1, maximum=len(patients))
+            })
+        else:
+            beds.append({
+                "ward_number": Numbers().between(minimum=1, maximum=len(wards)),
+                "bed_number": Numbers().between(minimum=1, maximum=100)
+            })
 
     for i in range(random.randint(num, num*3)):
         emergencyalerts.append({
             "timestamp": Datetime().datetime(start=2010, end=2018),
-            "message": Text().sentence()
+            "message": Text().sentence(),
+            "doctor_id": Numbers().between(minimum=1, maximum=len(doctors))
         })
 
     for i in range(len(doctors)):
@@ -103,7 +111,8 @@ def createData(num):
 
     for i in range(random.randint(num, num*3)):
         labinfos.append({
-            "testresult": Text().sentence()
+            "testresult": Text().sentence(),
+            "patient_id": Numbers().between(minimum=1, maximum=len(patients))
         })
 
     for i in range(random.randint(num//16, num//8)):

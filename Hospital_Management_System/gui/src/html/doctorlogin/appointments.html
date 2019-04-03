@@ -1,0 +1,39 @@
+<header>Doctor Appointments</header>
+
+<div class="info-container">
+    <div class="container h-100">
+        <div class="d-flex justify-content-center h-100">
+            <div class="input-group mx-auto">
+                <input class="form-control py-1" id="doctor-appointment-search-input2" type="search" value=""
+                    placeholder="Get Appointment Details using Appointment ID" >
+                <span class="input-group-append">
+                    <button class="btn btn-outline-secondary" id="doctor-appointment-submit2" type="button">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+
+        <table id="doctor-appointment-table2" class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>Appointment ID</th>
+                    <th>Patient ID</th>
+                    <th>Doctor ID</th>
+                    <th>Action</th>
+                    <th>timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <h6 class="text-center" id="doctor-appointment-result2"></h6>
+    </div>
+</div>
+
+
+<script>
+    delete require.cache[require.resolve('./doctorlogin/doctorlogin.js')];
+    require("./doctorlogin/doctorlogin.js")
+</script>
