@@ -48,7 +48,9 @@ def createData(num):
     for i in range(random.randint(num//16, num//8)):
         departments.append({
             "name": random.choice(d),
-            "salary": Numbers().between(minimum=50000, maximum=200000)
+            "salary": Numbers().between(minimum=50000, maximum=200000),
+            "fund_allocation": Numbers().between(minimum=500000, maximum=2000000),
+            "expenditure": Numbers().between(minimum=500000, maximum=2000000),
         })
 
     for i in range(random.randint(num//8, num//4)):
