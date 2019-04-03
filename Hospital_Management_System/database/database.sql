@@ -80,6 +80,8 @@ CREATE TABLE Departments(
     department_id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(200) NOT NULL,
     salary INT NOT NULL,
+    fund_allocation INT NOT NULL,
+    expenditure INT NOT NULL,
     PRIMARY KEY ( department_id )
 );
 
