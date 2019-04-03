@@ -21,7 +21,16 @@ function collectBedInfomation(connection) {
             for (let a = 0; a < rows.length; a++) {
                 html += "<tr>"
                 for (let key in rows[a]) {
-                    html += '<td>' + rows[a][key] + '</td>';
+                    if(key == "patient_id"){
+                        if(rows[a][key] == null){
+                            html += '<td><button class="btn btn-primary">Add</button></td>';
+                        }else{
+                            html += '<td>' + rows[a][key]+"<br>";
+                            html += '<button class="btn btn-primary">Remove</button></td>';
+                        }
+                    }else{
+                        html += '<td>' + rows[a][key] + '</td>';
+                    }
                 }
                 html += "</tr>"
             }
